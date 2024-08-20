@@ -17,15 +17,14 @@ public
 
 
 class Test{
-public
-    int te;
+    public int te;
 
     // Конструктор класса с инициализацией
-    Test(int te){this.te = te;}
+    public Test(int te){this.te = te;}
     // Конструктор копирования
-    Test(Test obj){this.te = obj.te;}
+    public Test(Test obj){this.te = obj.te;}
     // Метод возращающий обьект класса
-    Test get_copi(){
+    public Test get_copi(){
         Test temp = new Test(this.te + 1); 
         return temp;
     }

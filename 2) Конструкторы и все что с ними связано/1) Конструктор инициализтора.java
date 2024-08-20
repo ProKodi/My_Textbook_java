@@ -15,16 +15,16 @@ public
         // Создаем обьект с помощью конструктора копирования
         My_class new_class3 = new My_class(new_class2);
         // Создаем обьект с помощью конструктора по умолчанию
-        My_class new_class4;
+        My_class new_class4 = new My_class();
     }
 }
 
 class My_class{
-private
-    int number; // Какое-то поле класса
-    String state;
+
+    private int number; // Какое-то поле класса
+    private String state;
     
-public
+
     /*Добаление конструктора для класса
     Конструкторы представляют специальную функцию, которая имеет то же имя, что и класс. 
     Данная функция не возвращает никакого значения и позволяют инициалилизировать объект класса во время его создания.
@@ -35,23 +35,23 @@ public
         "действия конструктора класса"
     }
     */
-    My_class(int number){
+    public My_class(int number){
         // Данный конструктор используется когда класс инициализируют 1 параметром
         this.number = number; 
     }
     
-    My_class(int number, String state){
+    public My_class(int number, String state){
         // Данный конструктор используется когда класс инициализируют 2 параметрами
-        this.number = number; 
+        // Вызов конструктора класса My_class с одним параметром
+        this(number); // вызовет следующий конструктор: public My_class(int number)
         this.state = state;
-        System.out.println("Статус: " + this.state); 
+        System.out.println("Статус: " + this.state);
     }
     // Конструктор копирования (используется когда инициализирем обьектом это-го же класса)
-    My_class(final My_class opt){
-        this.number = opt.number; 
-        this.state = opt.state;
+    public My_class(final My_class opt){
+        this(opt.number, opt.state); 
     }
     // Конструктор по умолчанию (используется когда создаем обьект без инициализации)
     // Обычно такие конструкторы использую для того что-бы создать путой объект с последующей инициализацией
-    My_class(){}
+    public My_class(){}
 };

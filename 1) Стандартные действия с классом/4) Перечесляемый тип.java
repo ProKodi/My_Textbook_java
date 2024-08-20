@@ -28,12 +28,12 @@ enum My_type{
     // Имена обьектов для перечисления
     obj_0("inform 0"), obj_1("inform 1"), obj_2("inform 2"); 
 // По факту - реализация класса (можно не использовать)
-private
-    String inform = null; 
-    My_type(String inform){
+
+    private String inform = null; 
+    private My_type(String inform){
         this.inform = inform; 
     }
-public
-    String get_inform(){return this.inform;}
+
+    public String get_inform(){return this.inform;}
 };
 
